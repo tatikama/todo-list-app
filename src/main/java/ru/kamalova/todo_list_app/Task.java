@@ -1,11 +1,6 @@
 package ru.kamalova.todo_list_app;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -26,42 +21,53 @@ public class Task {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    @PrePersist
+
+    protected void onCreate() {
+        if (createdAt == null) {
+            createdAt = LocalDateTime.now();
+        }
+    }
+
+    // Конструктор без аргументов (нужен для JPA/Hibernate)
     public Task() {}
 
+    // Конструктор для создания задачи с автоматическим заданием времени
     public Task(String title, boolean done) {
         this.title = title;
         this.done = done;
         this.createdAt = LocalDateTime.now(); // Устанавливаем текущее время
     }
 
-    public Task(Long id, String title, boolean done, LocalDateTime createdAt) {
-        this.id = id;
-        this.title = title;
-        this.done = done;
-        this.createdAt = createdAt;
-    }
-
+    // Геттеры и сеттеры
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getTitle() {
         return title;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }
+
     public boolean isDone() {
         return done;
     }
+
     public void setDone(boolean done) {
         this.done = done;
     }
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
+
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
