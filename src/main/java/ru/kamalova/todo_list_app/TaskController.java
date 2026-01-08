@@ -24,9 +24,6 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    /**
-     * Добавляет новую задачу и возвращает её с состоянием успеха.
-     */
     @PostMapping("/tasks")
     public ResponseEntity<?> add(@RequestBody Task task) {
         LOGGER.debug("Добавление новой задачи: {}", task);
@@ -34,9 +31,6 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.CREATED).body(task);
     }
 
-    /**
-     * Возвращает список всех задач.
-     */
     @GetMapping("/tasks")
     public List<Task> getAll() {
         LOGGER.debug("Получение всех задач.");

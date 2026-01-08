@@ -5,5 +5,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TaskRepository extends CrudRepository<Task, Long> {
-    // Методы save() и findAll() предоставляются автоматически
 }

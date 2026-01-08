@@ -18,7 +18,7 @@ public class TaskService {
     }
 
     public void add(Task task) {
-        taskRepository.save(task); // Сохраняем задачу через репозиторий
+        taskRepository.save(task);
     }
 
     public List<Task> getAll() {

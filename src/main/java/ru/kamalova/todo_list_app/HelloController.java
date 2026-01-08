@@ -14,7 +14,7 @@ public class HelloController {
     private static final Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
 
     @Autowired
-    private TaskService taskService; // Предполагается, что у вас есть TaskService
+    private TaskService taskService;
 
     @GetMapping("/hello")
     public String hello() {
@@ -26,10 +26,10 @@ public class HelloController {
         LOGGER.debug("Получение первой задачи.");
         List<Task> tasks = taskService.getAll();
         if (!tasks.isEmpty()) {
-            return tasks.get(0); // Возвращаем первую задачу
+            return tasks.get(0);
         } else {
             LOGGER.warn("Список задач пуст, возвращаем фиктивную задачу.");
-            return new Task("Нет задач", true); // Или возвращаем фиктивную задачу
+            return new Task("Нет задач", true);
         }
     }
 }
