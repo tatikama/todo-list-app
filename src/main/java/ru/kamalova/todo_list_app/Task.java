@@ -42,4 +42,21 @@ public class Task {
             this.createdAt = LocalDateTime.now();
         }
     }
+        public class TaskDTO {
+            private Long id;
+            private String title;
+            private boolean done;
+        }
+
+    public Task() {}
+        public class CreateTaskDTO {
+            private String title;
+        }
+
+
+
+    // Геттер и сеттер для поля done
+    public void setDone(boolean done) {
+        this.done = done;
+    }
 }
