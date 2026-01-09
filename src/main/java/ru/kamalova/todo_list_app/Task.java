@@ -42,4 +42,22 @@ public class Task {
             this.createdAt = LocalDateTime.now();
         }
     }
+        public class TaskDTO {
+            private Long id;
+            private String title;
+            private boolean completed;
+        }
+
+    public Task() {}
+        public class CreateTaskDTO {
+            private String title;
+        }
+
+    private boolean completed;
+
+    // Геттер и сеттер для поля completed
+    public boolean isCompleted() {
+        return completed;
+    }
+
 }
