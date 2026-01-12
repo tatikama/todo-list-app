@@ -48,6 +48,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.6.3</version> <!-- Используйте актуальную версию -->
+		</dependency>
+
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-processor</artifactId>
+			<version>1.6.3</version> <!-- Та же версия, что и выше -->
+			<scope>provided</scope>
+		</dependency>
 
 	</dependencies>
 	<build>
