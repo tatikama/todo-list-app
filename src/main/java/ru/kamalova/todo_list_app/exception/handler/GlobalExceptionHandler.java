@@ -1,4 +1,4 @@
-package ru.kamalova.todo_list_app.handler;
+package ru.kamalova.todo_list_app.exception.handler;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import ru.kamalova.todo_list_app.model.ErrorResponse;
+import ru.kamalova.todo_list_app.exception.model.ErrorResponse;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {

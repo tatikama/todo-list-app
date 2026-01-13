@@ -1,4 +1,4 @@
-package ru.kamalova.todo_list_app;
+package ru.kamalova.todo_list_app.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -25,14 +25,12 @@ public class Task {
     // Пустой конструктор для JPA
     public Task() {}
 
-    // Конструктор с параметрами (если он нужен для создания объекта)
-    public Task(String title, boolean done) {
+        public Task(String title, boolean done) {
         this.title = title;
         this.done = done;
         this.createdAt = LocalDateTime.now();
     }
 
-    // Метод, который автоматически выставляет timestamp при создании объекта
     @PrePersist
     protected void onCreate() {
         if (this.createdAt == null) {

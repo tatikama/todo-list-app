@@ -1,11 +1,13 @@
-package ru.kamalova.todo_list_app;
+package ru.kamalova.todo_list_app.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.kamalova.todo_list_app.model.CreateTaskDTO;
+import ru.kamalova.todo_list_app.model.Task;
+import ru.kamalova.todo_list_app.model.TaskDTO;
+import ru.kamalova.todo_list_app.repository.TaskRepository;
 import ru.kamalova.todo_list_app.mapper.TaskMapper;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

@@ -1,4 +1,4 @@
-    package ru.kamalova.todo_list_app;
+    package ru.kamalova.todo_list_app.model;
 
     import lombok.Getter;
     import lombok.Setter;
@@ -12,7 +12,6 @@
         private String title;
         private boolean done;
 
-        // Конструктор (можно и без него, если устраивает умолчание)
-        public TaskDTO() {}
+                public TaskDTO() {}
 
     }

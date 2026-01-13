@@ -1,4 +1,4 @@
-package ru.kamalova.todo_list_app.model;
+package ru.kamalova.todo_list_app.exception.model;
 
 import lombok.Data;
 
@@ -12,5 +12,4 @@ public class ErrorResponse {
         this.detail = detail;
     }
 
-    // Геттеры и сеттеры
 }
