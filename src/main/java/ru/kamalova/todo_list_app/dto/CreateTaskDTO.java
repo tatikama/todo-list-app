@@ -1,4 +1,4 @@
-    package ru.kamalova.todo_list_app.model;
+    package ru.kamalova.todo_list_app.dto;
 
     import lombok.Getter;
     import lombok.Setter;
