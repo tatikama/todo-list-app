@@ -1,7 +1,9 @@
 package ru.kamalova.todo_list_app.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+
 import java.time.LocalDateTime;
 
 @Data
@@ -13,6 +15,7 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Title must not be blank")
     @Column(nullable = false)
     private String title;
 
@@ -25,13 +28,12 @@ public class Task {
     // Пустой конструктор для JPA
     public Task() {}
 
-        public Task(String title, boolean done) {
+    // Конструктор для удобного создания
+    public Task(String title, boolean done) {
         this.title = title;
         this.done = done;
         this.createdAt = LocalDateTime.now();
     }
-
-
 
     @PrePersist
     protected void onCreate() {
